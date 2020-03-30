@@ -76,15 +76,15 @@ Now for the rest of our transformation
 
 * Scalling
 
-        [x'] = [1, 0, tx] @ [x]
-        [y'] = [0, 1, ty]   [y]
-        [w'] = [0, 0,  1]   [1]
+[x'] = [1, 0, tx] @ [x]
+[y'] = [0, 1, ty]   [y]
+[w'] = [0, 0,  1]   [1]
 
 * Rotation
 
-        [x'] = [x cos(θ), -y sin(θ), 0] @ [x]
-        [y'] = [x sin(θ), y cos(θ),  0]   [y]
-        [w'] = [0,        0,         1]   [1]
+[x'] = [x cos(θ), -y sin(θ), 0] @ [x]
+[y'] = [x sin(θ), y cos(θ),  0]   [y]
+[w'] = [0,        0,         1]   [1]
        
 
        
