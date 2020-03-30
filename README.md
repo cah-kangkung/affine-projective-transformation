@@ -23,25 +23,25 @@ How can we do transformation? Well the simple equation would be p' = T(p). Since
        p' = M(p)  or basically   [x'] = [a, b] @ [x]
                                  [y']   [c, d]   [y]
                                
-#### # **Scalling**
+### # **Scalling**
 We do scalling by simply multyply our x and y by a scallar.
 
        x' = x * sx   or   [x'] = [sx, b] @ [x]
        y' = y * sy        [y']   [c, sy]   [y]
        
-#### # **Rotation**
+### # **Rotation**
 For rotation there would be an angel asociate with it called, theta.
 
        x' = x cos(θ) - y sin(θ)   or   [x'] = [cos(θ), -sin(θ)] @ [x]
        y' = x sin(θ) + y cos(θ)        [y']   [sin(θ),  cos(θ)]   [y]
        
-#### # **Shearing**
+### # **Shearing**
 The matrix reprsentaion for shearing would be.
 
        [x'] = [1, hs] @ [x]
        [y']   [vs, 1]   [y]
        
-#### # **Translation**
+### # **Translation**
 Lets look at translation. A translation done to a point would be as simple as
         
        x' = x + tx  or  ?
@@ -54,7 +54,7 @@ Notice that it can no longer be expressed by matrix M times the vector, thus tra
        
 It is almost imposible in this linear transformation that we can generate equation that matches with our translation equation. So how do we solve this?
 
-#### # **Homogeneous Coordinates**
+### # **Homogeneous Coordinates**
 The answer is homogeneous coordinates. Homogeneous coordinates in 2D space is basically a way to represent 2D coordinates with 3 vector. To write homogeneous coordinates we simply add the third coordinate in our vector called w. Hence our new coordinate will look like this
 
             [x]
@@ -63,17 +63,6 @@ The answer is homogeneous coordinates. Homogeneous coordinates in 2D space is ba
 
 We could fill variable w with anything but it is usually 1 or 0 where homogeneouse points whose w = 0 are called points of infinity. 
 So now that we have our new coordinate system, lets see what we will get from this.
-
-
-* Translation 
-
-        [x'] = [1, 0, tx] @ [x]        x' = x + tx 
-        [y'] = [0, 1, ty]   [y]   =>   y' = y + ty
-        [w'] = [0, 0,  1]   [1]        w' = 1
-       
-It matches our equation! hooray!
-Now for the rest of our transformation
-
 * Scalling
 
         [x'] = [1, 0, tx] @ [x]
@@ -92,6 +81,14 @@ Now for the rest of our transformation
         [y'] = [vs, 1, 0]   [y]
         [w'] = [0, 0,  1]   [1]
        
+* Translation 
+
+        [x'] = [1, 0, tx] @ [x]        x' = x + tx 
+        [y'] = [0, 1, ty]   [y]   =>   y' = y + ty
+        [w'] = [0, 0,  1]   [1]        w' = 1
+       
+It matches our equation! hooray!
+
 ## Affine and Projective Transformation
 Affine transformation is a particular case of projective transformation. It is pretty much a combination of linear transformation (rotation, scalling, etc.) and translation. Both transformation can be represent by this matrix
 
