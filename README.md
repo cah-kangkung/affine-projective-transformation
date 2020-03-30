@@ -23,25 +23,25 @@ How can we do transformation? Well the simple equation would be p' = T(p). Since
        p' = M(p)  or basically   [x'] = [a, b] @ [x]
                                  [y']   [c, d]   [y]
                                
-#### Scalling
+#### # Scalling
 We do scalling by simply multyply our x and y by a scallar.
 
        x' = x * sx   or   [x'] = [sx, b] @ [x]
        y' = y * sy        [y']   [c, sy]   [y]
        
-#### Rotation
+#### # Rotation
 For rotation there would be an angel asociate with it called, theta.
 
        x' = x cos(θ) - y sin(θ)   or   [x'] = [cos(θ), -sin(θ)] @ [x]
        y' = x sin(θ) + y cos(θ)        [y']   [sin(θ),  cos(θ)]   [y]
        
-#### Shearing
+#### # Shearing
 The matrix reprsentaion for shearing would be.
 
        [x'] = [1, hs] @ [x]
        [y']   [vs, 1]   [y]
        
-#### Translation
+#### # Translation
 Lets look at translation. A translation done to a point would be as simple as
         
        x' = x + tx  or  ?
@@ -54,7 +54,7 @@ Notice that it can no longer be expressed by matrix M times the vector, thus tra
        
 It is almost imposible in this linear transformation that we can generate equation that matches with our translation equation. So how do we solve this?
 
-#### Homogeneous Coordinates
+#### # Homogeneous Coordinates
 The answer is homogeneous coordinates. Homogeneous coordinates in 2D space is basically a way to represent 2D coordinates with 3 vector. To write homogeneous coordinates we simply add the third coordinate in our vector called w. Hence our new coordinate will look like this
 
             [x]
@@ -76,25 +76,33 @@ Now for the rest of our transformation
 
 * Scalling
 
-     [x'] = [1, 0, tx] @ [x]
-     [y'] = [0, 1, ty]   [y]
-     [w'] = [0, 0,  1]   [1]
-
+        [x'] = [1, 0, tx] @ [x]
+        [y'] = [0, 1, ty]   [y]
+        [w'] = [0, 0,  1]   [1]
 
 * Rotation
 
-      [x'] = [x cos(θ), -y sin(θ), 0] @ [x]
-      [y'] = [x sin(θ), y cos(θ),  0]   [y]
-      [w'] = [0,        0,         1]   [1]
+        [x'] = [x cos(θ), -y sin(θ), 0] @ [x]
+        [y'] = [x sin(θ), y cos(θ),  0]   [y]
+        [w'] = [0,        0,         1]   [1]
        
+* Shearing
 
+        [x'] = [1, hs, 0] @ [x]
+        [y'] = [vs, 1, 0]   [y]
+        [w'] = [0, 0,  1]   [1]
        
+## Affine and Projective Transformation
+Affine transformation is a particular case of projective transformation. It is pretty much a combination of linear transformation (rotation, scalling, etc.) and translation. Both transformation can be represent by this matrix
+
+            [a, b, c]
+        M = [d, e, f]
+            [g, e, 1]
        
-       
-       
-       
-       
-       
-       
-       
-       
+(a, b, d, e) - is what defined what kind of transformation it will perform: scalling, rotation, shearing.
+(c, f) - is the translation vector. It translate/move the point.
+(g, e) - this is what differentiate affine and projective transformation. These value will always be zero for affine transformation.
+
+Therefore affine transformation has 6 DOF while projective transformation has 8. Parallel line remain parallel in affine transfomation while projective transformation does not. As stated above, affine transformation is used to do scalling, rotation, shearing, and translation simultaneously. And projective transformation expand affine transformation usability by doing projective / persepctive warp, basically to change the persepective of an image.
+
+## Experiment on Projective Transformation
