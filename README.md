@@ -28,19 +28,19 @@ We do scalling by simply multyply our x and y by a scallar.
        x' = x * sx   or   [x'] = [sx, b] @ [x]
        y' = y * sy        [y']   [c, sy]   [y]
        
-### Rotation
+#### Rotation
 For rotation there would be an angel asociate with it called, theta.
 
        x' = x cos(θ) - y sin(θ)   or   [x'] = [cos(θ), -sin(θ)] @ [x]
        y' = x sin(θ) + y cos(θ)        [y']   [sin(θ),  cos(θ)]   [y]
        
-### Shearing
+#### Shearing
 The matrix reprsentaion for shearing would be.
 
        [x'] = [1, hs] @ [x]
        [y']   [vs, 1]   [y]
        
-### Translation
+#### Translation
 Lets look at translation. A translation done to a point would be as simple as
         
        x' = x + tx  or  ?
@@ -53,7 +53,7 @@ Notice that it can no longer be expressed by matrix M times the vector, thus tra
        
 It is almost imposible in this linear transformation that we can generate equation that matches with our translation equation. So how do we solve this?
 
-### Homogeneous Coordinates
+#### Homogeneous Coordinates
 The answer is homogeneous coordinates. Homogeneous coordinates in 2D space is basically a way to represent 2D coordinates with 3 vector. To write homogeneous coordinates we simply add the third coordinate in our vector called w. Hence our new coordinate will look like this
 
             [x]
@@ -73,13 +73,19 @@ So now that we have our new coordinate system, lets see what we will get from th
 It matches our equation! hooray!
 Now for the rest of our transformation
 
-* Scalling                          * Rotation
+* Scalling
 
-        [x'] = [1, 0, tx] @ [x]             [x'] = [1, 0, tx] @ [x] 
-        [y'] = [0, 1, ty]   [y]             [y'] = [0, 1, ty]   [y]
-        [w'] = [0, 0,  1]   [1]             [w'] = [0, 0,  1]   [1]
+        [x'] = [1, 0, tx] @ [x]
+        [y'] = [0, 1, ty]   [y]
+        [w'] = [0, 0,  1]   [1]
+
+* Rotation
+
+        [x'] = [x cos(θ), -y sin(θ), 0] @ [x]
+        [y'] = [x sin(θ), y cos(θ),  0]   [y]
+        [w'] = [0,        0,         1]   [1]
        
-       
+
        
        
        
