@@ -1,3 +1,6 @@
+### Originality
+This foretells which part of codes i import from external sources, and which parts i wrote myself
+
 1. [Kite - Connecting Scatter Plot](https://kite.com/python/answers/how-to-make-a-connected-scatter-plot-in-matplotlib-in-python) -> I use this as a reference for making my draw / display function.
 
 2. [Udacity - Computational Photograpy](https://classroom.udacity.com/courses/ud955) -> Especially lesson 23. This is where almost all of my resource came from. It provides you with so much better explanation on 2D transformation.
