@@ -14,7 +14,6 @@ And then we were asked to do projective transfomation which is just an affine tr
 ## 2D Linear Transformation
 Before we understand affine transformation, first we will take a look at 2D Linear transformation. A 2D point in cartesian coordinate can be denoted by a pair of value p = (x, y) or alternatively:
 
-asdasdasdasdasdasdasdasds
        p = [x] 
            [y]
 
