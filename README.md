@@ -101,5 +101,3 @@ Affine transformation is a particular case of projective transformation. It is p
 (g, e) - this is what differentiate affine and projective transformation. These value will always be zero for affine transformation.
 
 Therefore affine transformation has 6 DOF while projective transformation has 8. Parallel line remain parallel in affine transfomation while projective transformation does not. As stated above, affine transformation is used to do scalling, rotation, shearing, and translation simultaneously. And projective transformation expand affine transformation usability by doing projective / persepctive warp, basically to change the persepective of an image.
-
-## Experiment on Projective Transformation
